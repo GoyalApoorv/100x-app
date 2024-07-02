@@ -4,6 +4,7 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [formData, setFormData] = useState(sampleUserData);
+  const [userId, setUserId] = useState(null);
 
   return (
     <UserContext.Provider value={{ formData, setFormData }}>
@@ -21,6 +22,6 @@ const sampleUserData = {
   username: "",
   id: "",
   bio: "Full Stack Developer👨‍💻",
-  website: "apoorvgoyal.co.in",
+  website: "UserProfile.com",
   location: "India",
 };

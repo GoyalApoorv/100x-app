@@ -1,3 +1,4 @@
+// src/pages/login/CreateAccountStep2.js
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Fieldset from "../../components/Fieldset";
@@ -10,9 +11,7 @@ import { MONTHS } from "../../components/DatePicker";
 function CreateAccountStep2() {
   const userData = useContext(UserContext);
   const formValues = userData.formData;
-  const DOB = `${formValues.day} ${MONTHS[formValues.month]} ${
-    formValues.year
-  }`;
+  const DOB = `${formValues.day} ${MONTHS[formValues.month]} ${formValues.year}`;
 
   return (
     <>
