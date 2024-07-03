@@ -7,7 +7,7 @@ import { UserContext } from "../../contexts/UserContext";
 import DatePicker from "../../components/DatePicker";
 import StepHeading from "../../components/StepHeading";
 import { URLs } from "../../constants";
-import { supabase } from "../../supabaseClient"; // Import supabase client
+import { supabase } from "../../SupabaseClient"; // Import supabase client
 
 function CreateAccountStep1() {
   const navigate = useNavigate();

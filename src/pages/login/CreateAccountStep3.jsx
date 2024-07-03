@@ -6,7 +6,7 @@ import Fieldset from "../../components/Fieldset";
 import { UserContext } from "../../contexts/UserContext";
 import StepHeading from "../../components/StepHeading";
 import { URLs } from "../../constants";
-import { supabase } from "../../supabaseClient"; // Import supabase client
+import { supabase } from "../../SupabaseClient"; // Import supabase client
 
 function CreateAccountStep3() {
   const navigate = useNavigate();
