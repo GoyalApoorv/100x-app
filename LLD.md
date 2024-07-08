@@ -142,3 +142,5 @@ User Context - ![User Context](/public/image3.png)
 
 Tweet Context - ![Tweet Context](/public/image2.png)
 
+Diagram -` https://excalidraw.com/#room=ccbcbf6dd274f5ec902c,t4bGFXY4nxAkOvwwDYKcJA`
+![Diagram](/public/image.png)

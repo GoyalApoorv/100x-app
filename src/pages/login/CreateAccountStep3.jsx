@@ -6,7 +6,6 @@ import Fieldset from "../../components/Fieldset";
 import { UserContext } from "../../contexts/UserContext";
 import StepHeading from "../../components/StepHeading";
 import { URLs } from "../../constants";
-import { supabase } from "../../SupabaseClient"; // Import supabase client
 
 function CreateAccountStep3() {
   const navigate = useNavigate();
@@ -14,20 +13,11 @@ function CreateAccountStep3() {
   const formValues = userData.formData;
   const [verificationCode, setVerificationCode] = useState('');
 
-  const handleVerify = async (e) => {
+  const handleVerify = (e) => {
     e.preventDefault();
-    // Here you should verify the code with Supabase or any email service you're using
-    // For simplicity, we'll assume it's verified
-    const { user, error } = await supabase.auth.api.verifyOtp({
-      email: formValues.email,
-      token: verificationCode,
-      type: 'signup'
-    });
-    if (error) {
-      console.error("Error verifying code:", error);
-    } else {
-      navigate(URLs.signUpStep4);
-    }
+    // Here you would implement your own verification logic
+    // For now, we'll just navigate to the next step
+    navigate(URLs.signUpStep4);
   };
 
   return (
@@ -46,7 +36,7 @@ function CreateAccountStep3() {
             onInputChange={(value) => setVerificationCode(value)}
           />
           <p className="flex justify-end text-sm font-normal leading-normal text-twitter-default">
-            Didn’t receive a code?
+            Didn't receive a code?
           </p>
         </div>
       </section>

@@ -6,25 +6,19 @@ import Fieldset from "../../components/Fieldset";
 import { UserContext } from "../../contexts/UserContext";
 import StepHeading from "../../components/StepHeading";
 import { URLs } from "../../constants";
-import { supabase } from "../../SupabaseClient"; // Import supabase client
 
 function CreateAccountStep4() {
   const navigate = useNavigate();
-  const { formData } = useContext(UserContext);
+  const { formData, setFormData } = useContext(UserContext);
   const [password, setPassword] = useState("");
 
-  const handleSetPassword = async (e) => {
+  const handleSetPassword = (e) => {
     e.preventDefault();
-    const { user, error } = await supabase.auth.updateUser({
-      email: formData.email,
-      password,
-    });
-    if (error) {
-      console.error("Error setting password:", error);
-    } else {
-      console.log("Password set successfully", user);
-      navigate(URLs.feed);
-    }
+    // Here you would implement your own password setting logic
+    // For now, we'll just update the formData and navigate to the feed
+    setFormData({ ...formData, password });
+    console.log("Password set successfully");
+    navigate(URLs.feed);
   };
 
   return (

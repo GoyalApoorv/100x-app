@@ -7,7 +7,6 @@ import { UserContext } from "../../contexts/UserContext";
 import DatePicker from "../../components/DatePicker";
 import StepHeading from "../../components/StepHeading";
 import { URLs } from "../../constants";
-import { supabase } from "../../SupabaseClient"; // Import supabase client
 
 function CreateAccountStep1() {
   const navigate = useNavigate();
@@ -31,17 +30,11 @@ function CreateAccountStep1() {
     });
   };
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
-    const { email } = inputValues;
-    const { user, error } = await supabase.auth.signUp({ email });
-    if (error) {
-      console.error("Error signing up:", error);
-    } else {
-      setFormData({ ...formData, ...inputValues, userId: user.id });
-      console.info("💸your submitted values:", inputValues);
-      navigate(URLs.signUpStep2);
-    }
+    setFormData({ ...formData, ...inputValues });
+    console.info("💸your submitted values:", inputValues);
+    navigate(URLs.signUpStep2);
   };
 
   return (
