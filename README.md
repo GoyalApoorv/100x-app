@@ -1,6 +1,6 @@
 # 100x - Microblogging Platform
 
-[Visit 100x Site](https://100x-site.vercel.app/)
+[Visit 100x Site](https://100x-app-black.vercel.app/)
 
 ## Frontend Low-Level Design
 
